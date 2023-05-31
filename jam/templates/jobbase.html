@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs At Mail</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/bootstrap.bundle.js' %}">
+    </script>
+    <style>
+        .left
+        {
+            background-color:bisque;
+            min-height:500px;
+        }
+        .right
+        {
+            background-color:cornsilk;
+            min-height:500px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="background-color:burlywood;">
+        <div class="row text-dark text-center" >
+            <div class="col-sm-6">
+                <h4>Jobs At Mail</h4>
+            </div>
+            <div class="col-sm-6">
+                Welcome, Jobseeker
+            </div>
+        </div>
+        <!--Menubar start-->
+            <div class="row mt-2">
+                <div class="col-sm-12">
+                    <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Jobs At Mail</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'jobhome' %}">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'applyjob' %}" >Apply For Job</a>
+            </li>
+
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Admin
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'jobchengepassword' %}">Chenge Password</a></li>
+                <li><a class="dropdown-item" href="{% url 'joblogout' %}">Log Out</a></li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+            </div>
+        </div>
+        <!--Menubar End-->
+        <!--1-->
+        <div class="row mt-2 text-center">
+             <div class="col-sm-4 left">
+                 <h4 class="text-center text-light" style="background-color:burlywood;border-radius:10%;">
+                     Notification Bar
+                 </h4>
+                   <marquee direction="up" height="450px">
+                       <p class="mt-5" style="margin-left:5px;margin-right:5px;text-align:justify;color:black;">
+                           <b style="color:red;">Letest Job: </b>
+                           There was a Job in Softpro India.
+                           Login to view...
+                       </p>
+                       <p class="mt-5" style="margin-left:5px;margin-right:5px;text-align:justify;color:black;">
+                           <b style="color:red;">Letest Job: </b>
+                           There was a Job in Softpro India.
+                           Login to view...
+                       </p>
+                       <p class="mt-5" style="margin-left:5px;margin-right:5px;text-align:justify;color:black;">
+                           <b style="color:red;">Letest Job: </b>
+                           There was a Job in Softpro India.
+                           Login to view...
+                       </p>
+                       <p class="mt-5" style="margin-left:5px;margin-right:5px;text-align:justify;color:black;">
+                           <b style="color:red;">Letest Job: </b>
+                           There was a Job in Infosis.
+                           Login to view...
+                       </p>
+                       <p class="mt-5" style="margin-left:5px;margin-right:5px;text-align:justify;color:black;">
+                           <b style="color:red;">Letest Job: </b>
+                           There was a Job in Amazone.
+                           Login to view...
+                       </p>
+                   </marquee>
+             </div>
+            <div class="col-sm-8 right text-center">
+                {% block body %}
+
+               {% endblock body %}
+            </div>
+        </div>
+        <div class="row mt-2 bg-dark text-light text-center">
+            <div class="col-sm-6 bg-dark">
+                <h4>Copyright &copy; To Jobs At Mail</h4>
+            </div>
+            <div class="col-sm-6">
+                <h4>Developed By :- Hritik Kumar Vishwakarma</h4>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

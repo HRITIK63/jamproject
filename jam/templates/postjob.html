@@ -1,0 +1,47 @@
+{% extends "empbase.html" %}
+{% block body %}
+    <h4 class="mt-2" style="background-color:burlywood;color:white;text-align:center;">
+        Post A Job
+    </h4>
+{% if msg %}
+    <p style="text-align:center">{{msg}}</p>
+{% endif %}
+    <div style="width:60%;margin:0 auto;">
+        <br/><br/>
+        <form action="{% url 'pjob' %} " method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" name="jobtitle" class="form-control" required="True">
+            </div>
+            <div class="form-group">
+                <label>Post</label>
+                <input type="text" name="post" class="form-control" required="True">
+            </div>
+            <div class="form-group">
+                <label>Job Discription</label>
+                <textarea name="jobdesc" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Qualification</label>
+                <input type="text" name="qualification" class="form-control" required="True">
+            </div>
+            <div class="form-group">
+                <label>Experience</label>
+                <input type="text" name="experience" class="form-control" required="True">
+            </div>
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" name="location" class="form-control" required="True">
+            </div>
+            <div class="form-group">
+                <label>Salary Per Anum</label>
+                <input type="number" name="salarypa" class="form-control" required="True">
+            </div>
+            <br/><br/>
+            <div style="text-align:center;">
+                <input type="submit" value="Submit" class="btn btn-light" style="background-color:burlywood;" />
+            </div>
+        </form><br/>
+    </div>
+{% endblock body %}

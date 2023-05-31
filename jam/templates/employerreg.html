@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block body %}
+    <h4 class="mt-3 text-center text-light" style="border-radius:10%;background-color:burlywood;margin-left:4px;">
+        Employee Registration Form
+    </h4>
+    {% if msg %}
+        <p style="text-align:center;">{{msg}}</p>
+    {% endif %}
+    <div style="width:60%,margin:0 auto;">
+        <form class="mt-5" action="{% url 'ereg' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Enter Firm/Company Name</label>
+                <input type="text" name="firmname" required="True" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Enter Nature Of Work</label>
+                <textarea name="firmwork" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Enter Firm Address</label>
+                <textarea name="firmaddress" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Enter Contact Person Name</label>
+                <input type="text" name="cpname" class="form-control" required="True" />
+            </div>
+            <div class="form-group">
+                <label>Enter Contact Number</label>
+                <input name="cpcontactno" class="form-control" required="True">
+            </div>
+            <div class="form-group">
+                <label>Enter Email Address</label>
+                <input type="email" name="cpemailaddress" class="form-control" required="True"/>
+            </div>
+            <div class="form-group">
+                <label>Enter Aadhar Number</label>
+                <input type="number" name="aadharno" class="form-control" required="True">
+            </div>
+            <div class="form-group">
+                <label>Enter Permanent Account Number</label>
+                <input type="text" name="panno" class="form-control" required="True">
+            </div>
+            <div class="form-group">
+                <label>Enter GST Number</label>
+                <input type="text" name="gstno" class="form-control" required="True">
+            </div>
+            <div class="form-group">
+                <label>Enter Password</label>
+                <input type="password" name="password" class="form-control" required="True">
+            </div><br/><br/>
+            <div class="form-group text-center">
+                <input type="submit" valu="Register" class="btn text-light"  style="background-color:burlywood;">
+            </div>
+        </form><br>
+    </div>
+
+{% endblock body %}
